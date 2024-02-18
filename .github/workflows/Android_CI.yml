@@ -21,9 +21,9 @@ jobs:
 
       - name: Decode secrets
         env:
-          ENVIRONMENTS: ${{ secrets.ENVIRONMENTS }}
+          ENCODED_ENVIRONMENTS: ${{ secrets.ENVIRONMENTS }}
         run: |
-          echo $ENVIRONMENTS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
+          echo $ENCODED_ENVIRONMENTS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
 
       - name: Clean build
         run: ./gradlew clean
