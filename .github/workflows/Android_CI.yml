@@ -21,7 +21,7 @@ jobs:
 
       - name: Decode secrets
         env:
-          ENCODED_PROPERTIES: ${{ secrets.ENVIRONMENTS }}
+          ENVIRONMENTS: ${{ secrets.ENVIRONMENTS }}
         run: |
           echo $ENVIRONMENTS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
 
