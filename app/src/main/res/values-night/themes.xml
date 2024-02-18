@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<!-- Base application theme. -->
+	<style name="Base.Theme.InnowiseFoursquare" parent="Theme.Material3.DayNight.NoActionBar">
+		<item name="materialButtonStyle">@style/Base.Theme.Button</item>
+		<item name="circularProgressIndicatorStyle">@style/Base.Theme.ProgressIndicator</item>
+		<item name="android:statusBarColor">@color/black</item>
+	</style>
+
+	<style name="Base.Theme.Button" parent="Widget.Material3.Button">
+		<item name="backgroundTint">@color/brand_colour</item>
+		<item name="cornerRadius">3dp</item>
+		<item name="android:textAppearance">?attr/textAppearanceButton</item>
+	</style>
+
+	<style name="Base.Theme.ProgressIndicator" parent="Widget.Material3.CircularProgressIndicator">
+		<item name="indicatorColor">@color/brand_colour</item>
+	</style>
+
+
+</resources>

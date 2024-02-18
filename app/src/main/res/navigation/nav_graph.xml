@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/nav_graph"
+	app:startDestination="@id/emptyFragment">
+
+	<fragment
+		android:id="@+id/emptyFragment"
+		android:name="com.uogames.innowisefoursquare.ui.fragment.empty.EmptyFragment"
+		android:label="EmptyFragment" />
+
+	<fragment
+		android:id="@+id/authFragment"
+		android:name="com.uogames.innowisefoursquare.ui.fragment.authentication.AuthFragment"
+		android:label="AuthFragment" />
+
+	<fragment
+		android:id="@+id/bottomNavigationFragment"
+		android:name="com.uogames.innowisefoursquare.ui.fragment.navigation.BottomNavigationFragment"
+		android:label="BottomNavigationFragment" />
+
+	<fragment
+		android:id="@+id/detailPlaceFragment"
+		android:name="com.uogames.innowisefoursquare.ui.fragment.detail.DetailPlaceFragment"
+		android:label="DetailPlaceFragment" />
+
+
+</navigation>

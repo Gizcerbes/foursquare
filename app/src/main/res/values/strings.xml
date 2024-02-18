@@ -1,0 +1,14 @@
+<resources>
+	<string name="app_name">InnowiseFoursquare</string>
+	<string name="authentication">Authentication</string>
+	<string name="connect_to_foursquare">Connect to foursquare</string>
+	<string name="nearby">Nearby</string>
+	<string name="history">History</string>
+	<string name="profile">Profile</string>
+	<string name="retry">Retry</string>
+	<string name="something_went_wrong">Something went wrong</string>
+	<string name="log_out">Log out</string>
+	<string name="created_at">Created at:</string>
+	<string name="followers">Followers:</string>
+	<string name="place_info">Place info</string>
+</resources>
