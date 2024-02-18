@@ -23,7 +23,7 @@ jobs:
         env:
           ENCODED_PROPERTIES: ${{ secrets.ENVIRONMENTS }}
         run: |
-          echo $ENCODED_KEYSTORE_BKS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
+          echo $ENVIRONMENTS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
 
       - name: Clean build
         run: ./gradlew clean
