@@ -26,6 +26,7 @@ jobs:
           ENCODED_ENVIRONMENTS: ${{ secrets.ENVIRONMENTS }}
           ENCODED_KEYSTORE: ${{ secrets.KEYSTORE }}
         run: |
+          mkdir "${GITHUB_WORKSPACE}"/app/keystore/
           echo $ENCODED_ENVIRONMENTS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
           echo $ENCODED_KEYSTORE | base64 -di > "${GITHUB_WORKSPACE}"/app/keystore/keystore.jks
 
