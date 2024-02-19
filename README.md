@@ -14,3 +14,23 @@
 
 https://github.com/Gizcerbes/foursquare/assets/26376753/b7a546bf-4af8-463c-8655-112230064669
 
+# Add files to build
+
+#### path `buildSrc/src/main/kotlin/Environments.kt`
+
+```
+object Environments {
+	
+	const val API_CLIENT_ID = "\" ... \""
+	const val API_CLIENT_SECRET = "\" ... \""
+	const val API_KEY = "\" ... \""
+
+	const val STORE_FILE = " ... "
+	const val STORE_PASSWORD = " ... "
+	const val KEY_ALIAS = " ... "
+	const val KEY_PASSWORD = " ... "
+	
+}
+```
+
+#### path `app/keystore/keystore.jks`
