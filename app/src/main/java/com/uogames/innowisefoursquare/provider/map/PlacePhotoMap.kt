@@ -19,7 +19,7 @@ object PlacePhotoMap {
 
 	fun PlacePhotoResponse.PlacePhotoItem.toEntity(fsqID: String) = PhotoEntity(
 		id = id?.toIntOrNull() ?: 0,
-		url = "${prefix}800x467$suffix",
+		url = "${prefix}original$suffix",
 		fsqId = fsqID
 	)
 

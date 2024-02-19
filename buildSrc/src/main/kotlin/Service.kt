@@ -3,7 +3,8 @@ import java.util.Base64
 
 
 fun main() {
-	encodeEnvironments()
+	//encodeEnvironments()
+	repeat(3){ passGenerator()}
 }
 
 
@@ -16,4 +17,20 @@ private fun encodeEnvironments(){
 	}.close()
 }
 
+
+private fun passGenerator(len: Int = 100){
+	val lit = ('a'..'z').toList()
+	val uplit = ('A'..'Z').toList()
+	val num = ('0'..'9').toList()
+	val passBuilder = StringBuilder()
+	for (i in 0..len){
+		val keys = (Math.random() * 3).toInt()
+		when(keys){
+			0 -> passBuilder.append(lit.random())
+			1 -> passBuilder.append(uplit.random())
+			2 -> passBuilder.append(num.random())
+		}
+	}
+	println(passBuilder)
+}
 

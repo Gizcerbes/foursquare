@@ -31,8 +31,8 @@ android {
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 
-		buildConfigField("String" ,"CLIENT_ID", Environments.API_CLIENT_ID)
-		buildConfigField("String" ,"CLIENT_SECRET", Environments.API_CLIENT_SECRET)
+		buildConfigField("String", "CLIENT_ID", Environments.API_CLIENT_ID)
+		buildConfigField("String", "CLIENT_SECRET", Environments.API_CLIENT_SECRET)
 		buildConfigField("String", "API_KEY", Environments.API_KEY)
 
 		kapt {
@@ -44,10 +44,21 @@ android {
 
 	}
 
+	signingConfigs {
+		create("sign") {
+			storeFile = file(Environments.STORE_FILE)
+			storePassword = Environments.STORE_PASSWORD
+			keyAlias = Environments.KEY_ALIAS
+			keyPassword = Environments.KEY_PASSWORD
+		}
+
+	}
+
 	buildTypes {
 		release {
-			isMinifyEnabled = false
+			isMinifyEnabled = true
 			proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+			signingConfig = signingConfigs.getByName("sign")
 		}
 	}
 	compileOptions {
@@ -77,7 +88,6 @@ dependencies {
 	room()
 	daggerHilt()
 	ktor()
-	//foursquare()
 	appauth()
 
 	testImplementation("junit:junit:4.13.2")

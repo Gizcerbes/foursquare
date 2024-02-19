@@ -29,7 +29,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 
-private const val CACHE_FOLDER = "okhttp"
+
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -37,6 +37,7 @@ class NetworkModule {
 
 	private val BASE_URL_V3 = "https://api.foursquare.com/v3/places/"
 	private val BASE_URL_V2 = "https://api.foursquare.com/v2/"
+	private val CACHE_FOLDER = "okhttp"
 
 	@Singleton
 	@Provides
