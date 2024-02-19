@@ -3,8 +3,9 @@ import java.util.Base64
 
 
 fun main() {
-	//encodeEnvironments()
-	repeat(3){ passGenerator()}
+	encodeEnvironments()
+	//encodeKeystore()
+	//repeat(3){ passGenerator()}
 }
 
 
@@ -12,6 +13,15 @@ private fun encodeEnvironments(){
 	val f = File("buildSrc/src/main/kotlin/Environments.kt").readBytes()
 	val encoded = Base64.getEncoder().encode(f)
 	File("encoded.Environments").outputStream().apply {
+		write(encoded)
+		flush()
+	}.close()
+}
+
+private fun encodeKeystore(){
+	val f = File("app/keystore/keystore.jks").readBytes()
+	val encoded = Base64.getEncoder().encode(f)
+	File("encoded.keystore").outputStream().apply {
 		write(encoded)
 		flush()
 	}.close()

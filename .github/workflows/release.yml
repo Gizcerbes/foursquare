@@ -24,8 +24,10 @@ jobs:
       - name: Decode secrets
         env:
           ENCODED_ENVIRONMENTS: ${{ secrets.ENVIRONMENTS }}
+          ENCODED_KEYSTORE: ${{ secrets.KEYSTORE }}
         run: |
           echo $ENCODED_ENVIRONMENTS | base64 -di > "${GITHUB_WORKSPACE}"/buildSrc/src/main/kotlin/Environments.kt
+          echo $ENCODED_KEYSTORE | base64 -di > "${GITHUB_WORKSPACE}"/app/keystore/keystore.jks
 
       - name: Clean build
         run: ./gradlew clean
