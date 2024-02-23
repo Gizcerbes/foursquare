@@ -5,13 +5,11 @@ import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.navOptions
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+
 
 
 @AndroidEntryPoint
@@ -39,7 +37,6 @@ class MainActivity : AppCompatActivity(), SplashEND {
 	}
 
 	private var keepSplash = true
-	private var observers: Job? = null
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		installSplashScreen().apply { setKeepOnScreenCondition { keepSplash } }

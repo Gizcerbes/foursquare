@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.squareup.picasso.Picasso
-import com.uogames.innowisefoursquare.Config
 import com.uogames.innowisefoursquare.MainActivity.Companion.navigate
 import com.uogames.innowisefoursquare.R
 import com.uogames.innowisefoursquare.databinding.FragmentProfileBinding
@@ -18,10 +17,7 @@ import com.uogames.innowisefoursquare.utils.observe
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient
-import java.io.File
 import java.util.Calendar
-import java.util.Date
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -32,9 +28,6 @@ class ProfileFragment : Fragment() {
 
 	@Inject
 	lateinit var picasso: Picasso
-
-	@Inject
-	lateinit var okHttpClient: OkHttpClient
 
 	private val vm: ProfileViewModel by viewModels()
 
@@ -47,11 +40,8 @@ class ProfileFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-
 		bind.btnLogOut.setOnClickListener {
-			Config.accessToken.value = null
 			vm.clean()
-			okHttpClient.cache?.delete()
 			navigate(R.id.emptyFragment)
 		}
 		vm.load()

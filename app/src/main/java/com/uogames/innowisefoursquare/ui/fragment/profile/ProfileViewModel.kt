@@ -8,17 +8,20 @@ import com.uogames.innowisefoursquare.provider.dto.UserSelfDTO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
 import javax.inject.Inject
 
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
 	private val provider: UserProvider,
-	private val serviceProvider: ServiceProvider
+	private val serviceProvider: ServiceProvider,
+	private val okHttpClient: OkHttpClient
 ) : ViewModel() {
 
 	private val workScope = CoroutineScope(Dispatchers.IO)
@@ -48,10 +51,14 @@ class ProfileViewModel @Inject constructor(
 	fun clean() {
 		_isLoading.value = true
 		workScope.launch {
+			Config.accessToken.value = null
+			okHttpClient.cache?.directory?.listFiles()?.forEach { it.delete() }
 			serviceProvider.clean()
 			_isLoading.value = false
 		}
 	}
+
+
 
 
 }

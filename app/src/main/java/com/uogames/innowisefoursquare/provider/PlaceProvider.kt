@@ -66,7 +66,6 @@ class PlaceProvider @Inject constructor(
 			withContext(coroutineContext) { dao.insert(r.results.map { it.toEntity() }) }
 			r.results.map { it.toDTO() }
 		} catch (e: Throwable) {
-			Log.e("TAG", "placesSearch: $e", )
 			dao.getList().map { it.toDTO() }
 		}
 	}

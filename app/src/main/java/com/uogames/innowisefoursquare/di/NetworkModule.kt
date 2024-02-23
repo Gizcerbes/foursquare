@@ -44,12 +44,7 @@ class NetworkModule {
 	fun provideOkHttp(@ApplicationContext context: Context): OkHttpClient = OkHttpClient()
 		.newBuilder()
 		.cache(Cache(File(context.cacheDir, CACHE_FOLDER), 1000 * 1024 * 1024))
-		.addInterceptor(Interceptor() { chain ->
-			chain.request().newBuilder().apply {
-				//addHeader("Authorization", BuildConfig.API_KEY)
-			}.build().let { chain.proceed(it) }
-		}
-		).build()
+		.build()
 
 
 	@Singleton
