@@ -23,6 +23,7 @@ object Dependency {
 		implementation("androidx.palette:palette-ktx:1.0.0")
 		implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 		implementation("androidx.core:core-splashscreen:1.0.1")
+		implementation("androidx.security:security-crypto:1.0.0")
 
 	}
 

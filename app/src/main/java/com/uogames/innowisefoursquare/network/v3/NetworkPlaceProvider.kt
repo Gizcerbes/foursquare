@@ -58,6 +58,7 @@ class NetworkPlaceProvider @Inject constructor(
 		sw?.run { parameter("sw", this) }
 		near?.run { parameter("near", this) }
 		polygon?.run { parameter("polygon", this) }
+		sort?.run { parameter("sort", this) }
 		limit?.run { parameter("limit", this) }
 		sessionToken?.run { parameter("session_token", this) }
 		superVenueID?.run { parameter("super_venue_id", this) }
