@@ -12,7 +12,11 @@
 
 ### Clears data when the user logs out.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2XJ3zJqi4BA?si=RYthS6BExwx7rmO9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+https://github.com/Gizcerbes/foursquare/assets/26376753/c9444f1f-d7a8-4453-9d22-a5a399801661
+
+
+</video>
 
 # Add files to build
 
