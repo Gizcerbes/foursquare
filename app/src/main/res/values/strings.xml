@@ -11,4 +11,6 @@
 	<string name="created_at">Created at:</string>
 	<string name="followers">Followers:</string>
 	<string name="place_info">Place info</string>
+	<string name="latitude">Latitude</string>
+	<string name="longitude">Longitude</string>
 </resources>

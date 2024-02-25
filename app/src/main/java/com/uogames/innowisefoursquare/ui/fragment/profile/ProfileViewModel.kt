@@ -32,6 +32,9 @@ class ProfileViewModel @Inject constructor(
 	private val _isLoading = MutableStateFlow(false)
 	val isLoading = _isLoading.asStateFlow()
 
+	val latitude = Config.latitude.asStateFlow()
+	val longitude = Config.longitude.asStateFlow()
+
 	val isOk = _isLoading
 		.combine(_user) { k, v -> k || v != null }
 
@@ -58,7 +61,21 @@ class ProfileViewModel @Inject constructor(
 		}
 	}
 
+	fun setLatitude(latitude: String) {
+		try {
+			Config.latitude.value = latitude.toDouble().toString()
+		} catch (e: Exception) {
 
+		}
+	}
+
+	fun setLongitude(longitude: String){
+		try {
+			Config.longitude.value = longitude.toDouble().toString()
+		} catch (e: Exception) {
+
+		}
+	}
 
 
 }
