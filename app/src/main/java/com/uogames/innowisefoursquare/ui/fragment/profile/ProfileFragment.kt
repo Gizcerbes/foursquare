@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -46,6 +47,10 @@ class ProfileFragment : Fragment() {
 		}
 		vm.load()
 		bind.btnRetry.setOnClickListener { vm.load() }
+		bind.tilLatitude.editText?.setText(vm.latitude.value)
+		bind.tilLongitude.editText?.setText(vm.longitude.value)
+		bind.tilLatitude.editText?.addTextChangedListener { vm.setLatitude(it.toString()) }
+		bind.tilLongitude.editText?.addTextChangedListener { vm.setLongitude(it.toString()) }
 	}
 
 	@SuppressLint("SetTextI18n")
@@ -64,7 +69,6 @@ class ProfileFragment : Fragment() {
 			}
 			vm.isOk.observe(this) { bind.llWrong.visibility = if (it) View.GONE else View.VISIBLE }
 			vm.isLoading.observe(this) { bind.mcvProgress.visibility = if (it) View.VISIBLE else View.GONE }
-
 		}
 	}
 
