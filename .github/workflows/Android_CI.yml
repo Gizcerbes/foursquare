@@ -32,4 +32,4 @@ jobs:
         run: ./gradlew clean
 
       - name: Build bundle apk
-        run: ./gradlew assemble
+        run: ./gradlew assembleRelease
