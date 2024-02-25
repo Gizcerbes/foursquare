@@ -12,7 +12,7 @@
 
 ### Clears data when the user logs out.
 
-https://github.com/Gizcerbes/foursquare/assets/26376753/b7a546bf-4af8-463c-8655-112230064669
+[![Demonstration](https://youtu.be/2XJ3zJqi4BA)]
 
 # Add files to build
 
