@@ -12,7 +12,7 @@
 
 ### Clears data when the user logs out.
 
-[![Demonstration](https://youtu.be/2XJ3zJqi4BA)]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2XJ3zJqi4BA?si=RYthS6BExwx7rmO9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # Add files to build
 
